@@ -10,18 +10,19 @@
 			<button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
 			<ul class="nav-links">
 				<li>
-					<a href="#">Accueil</a>
+					<a href="/">Accueil</a>
 				</li>
 				<li>
 					<a href="#features">Fonctionnalités</a>
 				</li>
 				<li>
-					<a href="#about">À propos</a>
+					<a href="{{ path('app_about') }}">À propos</a>
 				</li>
 				<li>
 					<a href="#contact">Contact</a>
 				</li>
 			</ul>
+
 		</div>
 	</nav>
 
@@ -83,9 +84,7 @@
 				— MonSite • Template statique pour tests</p>
 		</div>
 	</footer>
-
 {% endblock %}
-
 {% block javascripts %}
 	<script>
 		// Simple toggle pour le menu mobile
@@ -94,6 +93,8 @@ const btn = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 if (! btn || ! links) 
 return;
+
+
 
 btn.addEventListener('click', function () {
 links.classList.toggle('open');
