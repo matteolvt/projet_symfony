@@ -1,20 +1,103 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<nav class="navbar">
+		<div class="container nav-inner">
+			<a class="brand" href="/">MonSite</a>
+			<button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+			<ul class="nav-links">
+				<li>
+					<a href="#">Accueil</a>
+				</li>
+				<li>
+					<a href="#features">Fonctionnalités</a>
+				</li>
+				<li>
+					<a href="#about">À propos</a>
+				</li>
+				<li>
+					<a href="#contact">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<header class="hero">
+		<div class="container">
+			<h1>Bienvenue sur MonSite</h1>
+			<p class="lead">Prototype statique pour tester le front — nav, hero, sections et footer responsive.</p>
+			<p>
+				<a class="btn" href="#features">Commencer</a>
+			</p>
+		</div>
+	</header>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/matteolivrozet/Documents/Cours/Symfony/N3/Freelance/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/Users/matteolivrozet/Documents/Cours/Symfony/N3/Freelance/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+	<main class="container main">
+		<section id="features" class="features">
+			<h2>Ce que vous pouvez tester</h2>
+			<div class="grid">
+				<article>
+					<h3>Composant 1</h3>
+					<p>Une courte description du composant 1. Idéal pour prototyper des interactions.</p>
+				</article>
+				<article>
+					<h3>Composant 2</h3>
+					<p>Une courte description du composant 2. Layouts, formulaires, etc.</p>
+				</article>
+				<article>
+					<h3>Composant 3</h3>
+					<p>Une courte description du composant 3. Ajouter des cartes, tableaux, graphiques.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="about" class="about">
+			<h2>À propos</h2>
+			<p>Page statique minimale incluse directement dans Twig. Modifiez-la librement pour vos essais.</p>
+		</section>
+
+		<section id="contact" class="contact">
+			<h2>Contact</h2>
+			<form class="contact-form" action="#" method="post">
+				<label for="name">Nom</label>
+				<input id="name" name="name" type="text" placeholder="Votre nom">
+
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email" placeholder="votre@exemple.com">
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="4" placeholder="Votre message..."></textarea>
+
+				<button class="btn" type="submit">Envoyer</button>
+			</form>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>©
+				{{ "now"|date("Y") }}
+				— MonSite • Template statique pour tests</p>
+		</div>
+	</footer>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script>
+		// Simple toggle pour le menu mobile
+(function () {
+const btn = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+if (! btn || ! links) 
+return;
+
+btn.addEventListener('click', function () {
+links.classList.toggle('open');
+});
+})();
+	</script>
 {% endblock %}
