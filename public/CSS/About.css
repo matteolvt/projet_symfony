@@ -1,0 +1,22 @@
+body {
+    background: #f7f7f7;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: #2C3E50;
+}
+
+.about-section h2 {
+    color: #1A73E8;
+}
